@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="AntiCake" default="init" basedir=".">
+    <description>
+        The build file for the AntiCake software
+    </description>
+    
+  <property name="bin" location="bin" />
+    
+  <target name="init" depends="clean">
+    <mkdir dir="${bin}"/>
+    <!--<copy todir="${bin}/anticake">
+        <fileset dir="anticake"/>
+    </copy>-->
+  </target>
+    
+  <target name="compile" depends="init" description="compile the source only">
+    <javac srcdir="anticake" destdir="${bin}"/>
+  </target>
+  
+  <target name="build" depends="compile" 
+        description="generate the jar for distribution">
+    <jar destfile="${bin}/anticake.jar" basedir="${bin}">
+        <manifest>
+            <attribute name="Main-Class" value="anticake.AntiCake"/>
+        </manifest>
+        <zipfileset dir="." includes="LICENSE" fullpath="LICENSE"/>
+    </jar>
+  </target>
+  
+  <target name="clean" description="cleanup">
+    <delete dir="${bin}"/>
+  </target>
+</project>
