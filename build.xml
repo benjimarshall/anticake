@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project name="AntiCake" default="init" basedir=".">
+<project name="AntiCake" default="build" basedir=".">
     <description>
         The build file for the AntiCake software
     </description>
