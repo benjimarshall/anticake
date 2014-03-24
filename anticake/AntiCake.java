@@ -12,6 +12,7 @@ public class AntiCake {
 		ArrayList<String> names = new ArrayList<String>(Arrays.asList(homedir.list()));
 		
         JFrame frame = new JFrame("AntiCake");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JProgressBar progressBar = new JProgressBar(0, names.size());
         progressBar.setValue(0);
         progressBar.setStringPainted(true);
@@ -25,5 +26,7 @@ public class AntiCake {
 			}
             progressBar.setValue(x);
 		}
-	}
+        
+        frame.dispose();
+    }
 }
