@@ -11,19 +11,19 @@ public class AntiCake {
 		File homedir = new File("./");
 		ArrayList<String> names = new ArrayList<String>(Arrays.asList(homedir.list()));
 		
-    JFrame frame = new JFrame("AntiCake");
-    JProgressBar progressBar = new JProgressBar(0, names.size());
-    progressBar.setValue(0);
-    progressBar.setStringPainted(true);
-    frame.add(progressBar);
-    frame.pack();
-    frame.setVisible(true);
+        JFrame frame = new JFrame("AntiCake");
+        JProgressBar progressBar = new JProgressBar(0, names.size());
+        progressBar.setValue(0);
+        progressBar.setStringPainted(true);
+        frame.add(progressBar);
+        frame.pack();
+        frame.setVisible(true);
     
 		for (int x = 0; x < names.size(); x++) {
 			if (names.get(x).startsWith("Cake")) {
 				(new File("./" + names.get(x))).delete();
-        progressBar.setValue(x);
 			}
+            progressBar.setValue(x);
 		}
 	}
 }
