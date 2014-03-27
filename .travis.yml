@@ -1,0 +1,5 @@
+language: java
+
+before_script: ./prepare.sh
+script: test.sh
+Fixes #4
