@@ -1,2 +1,3 @@
 #!/bin/sh
-# Put test code here
+cp bin/anticake.jar ./
+java -jar anticake.jar
